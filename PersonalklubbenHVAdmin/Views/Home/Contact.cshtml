@@ -1,17 +1,24 @@
-﻿@{
+﻿@model IEnumerable<Loinprojekt_admin.LoginService.InterfaceAdmin>
+@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<h2>Contact</h2>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<table class="table">
+
+    <tr>
+
+        <th>Username</th>
+        <th>Email</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m => item.Username)</td>
+            <td>@Html.DisplayFor(m => item.Email)</td>
+        </tr>
+    }
+</table>
